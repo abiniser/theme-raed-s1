@@ -21,34 +21,74 @@
         </div>
     </section>
 
-    {# 2. Categories Section #}
-    <section style="padding:48px 0; background:#F2F2F2;">
+    {# 2. Categories Section (Ultra Modern Design) #}
+    <section style="padding:80px 0; background:linear-gradient(to bottom, #F9FAFB, #F3F4F6);">
         <div class="container">
-            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:32px;">
-                <a href="{{ store.url }}" style="display:flex; flex-direction:column; align-items:center; text-decoration:none; color:#0F3A28;">
-                    <div style="width:80px; height:80px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.08); border:1px solid #e5e7eb; margin-bottom:12px; color:#2F6F55;">
-                       <i class="sicon-walk" style="font-size:1.8rem;"></i>
+            <div style="text-align:center; margin-bottom:40px;">
+                <h2 style="font-size:2rem; font-weight:700; color:#0F3A28; margin-bottom:8px;">اكتشف الأقسام</h2>
+                <div style="width:60px; height:4px; background:#D4AF37; margin:0 auto; border-radius:2px;"></div>
+            </div>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:24px; padding:0 16px;">
+                
+                {# Category 1: Camping #}
+                <a href="{{ store.url }}" style="display:block; text-decoration:none; group; position:relative; overflow:hidden; border-radius:16px; background:#fff; box-shadow:0 10px 30px rgba(15,58,40,0.05); transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border:1px solid rgba(15,58,40,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(15,58,40,0.12)'; this.style.borderColor='rgba(212,175,55,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(15,58,40,0.05)'; this.style.borderColor='rgba(15,58,40,0.05)';">
+                    <div style="padding:40px 24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+                        <div style="width:80px; height:80px; border-radius:40px; background:linear-gradient(135deg, rgba(47,111,85,0.1), rgba(47,111,85,0.02)); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#2F6F55; transition:all 0.3s ease;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L2 22h20L12 2z"></path>
+                                <path d="M12 15v7"></path>
+                            </svg>
+                        </div>
+                        <h3 style="font-weight:700; font-size:1.15rem; color:#0F3A28; margin-bottom:8px;">مستلزمات التخييم</h3>
+                        <p style="font-size:0.9rem; color:#6B7280;">معدات النجاة والمبيت</p>
                     </div>
-                    <h3 style="font-weight:700; font-size:0.9rem;">مستلزمات التخييم</h3>
                 </a>
-                <a href="{{ store.url }}" style="display:flex; flex-direction:column; align-items:center; text-decoration:none; color:#0F3A28;">
-                    <div style="width:80px; height:80px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.08); border:1px solid #e5e7eb; margin-bottom:12px; color:#2F6F55;">
-                       <i class="sicon-car" style="font-size:1.8rem;"></i>
+
+                {# Category 2: Off-road #}
+                <a href="{{ store.url }}" style="display:block; text-decoration:none; group; position:relative; overflow:hidden; border-radius:16px; background:#fff; box-shadow:0 10px 30px rgba(15,58,40,0.05); transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border:1px solid rgba(15,58,40,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(15,58,40,0.12)'; this.style.borderColor='rgba(212,175,55,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(15,58,40,0.05)'; this.style.borderColor='rgba(15,58,40,0.05)';">
+                    <div style="padding:40px 24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+                        <div style="width:80px; height:80px; border-radius:40px; background:linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.02)); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#D4AF37; transition:all 0.3s ease;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <path d="M12 2v2"></path>
+                                <path d="M12 20v2"></path>
+                                <path d="M4 12H2"></path>
+                                <path d="M22 12h-2"></path>
+                            </svg>
+                        </div>
+                        <h3 style="font-weight:700; font-size:1.15rem; color:#0F3A28; margin-bottom:8px;">معدات الطرق</h3>
+                        <p style="font-size:0.9rem; color:#6B7280;">للقيادة في التضاريس الوعرة</p>
                     </div>
-                    <h3 style="font-weight:700; font-size:0.9rem;">معدات الطرق</h3>
                 </a>
-                <a href="{{ store.url }}" style="display:flex; flex-direction:column; align-items:center; text-decoration:none; color:#0F3A28;">
-                    <div style="width:80px; height:80px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.08); border:1px solid #e5e7eb; margin-bottom:12px; color:#2F6F55;">
-                       <i class="sicon-battery" style="font-size:1.8rem;"></i>
+
+                {# Category 3: Power #}
+                <a href="{{ store.url }}" style="display:block; text-decoration:none; group; position:relative; overflow:hidden; border-radius:16px; background:#fff; box-shadow:0 10px 30px rgba(15,58,40,0.05); transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border:1px solid rgba(15,58,40,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(15,58,40,0.12)'; this.style.borderColor='rgba(212,175,55,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(15,58,40,0.05)'; this.style.borderColor='rgba(15,58,40,0.05)';">
+                    <div style="padding:40px 24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+                        <div style="width:80px; height:80px; border-radius:40px; background:linear-gradient(135deg, rgba(47,111,85,0.1), rgba(47,111,85,0.02)); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#2F6F55; transition:all 0.3s ease;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                            </svg>
+                        </div>
+                        <h3 style="font-weight:700; font-size:1.15rem; color:#0F3A28; margin-bottom:8px;">طاقة وبطاريات</h3>
+                        <p style="font-size:0.9rem; color:#6B7280;">حلول طاقة مستدامة للمخيم</p>
                     </div>
-                    <h3 style="font-weight:700; font-size:0.9rem;">طاقة وبطاريات</h3>
                 </a>
-                <a href="{{ store.url }}" style="display:flex; flex-direction:column; align-items:center; text-decoration:none; color:#0F3A28;">
-                    <div style="width:80px; height:80px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.08); border:1px solid #e5e7eb; margin-bottom:12px; color:#2F6F55;">
-                       <i class="sicon-camera" style="font-size:1.8rem;"></i>
+
+                {# Category 4: Observation #}
+                <a href="{{ store.url }}" style="display:block; text-decoration:none; group; position:relative; overflow:hidden; border-radius:16px; background:#fff; box-shadow:0 10px 30px rgba(15,58,40,0.05); transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border:1px solid rgba(15,58,40,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(15,58,40,0.12)'; this.style.borderColor='rgba(212,175,55,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(15,58,40,0.05)'; this.style.borderColor='rgba(15,58,40,0.05)';">
+                    <div style="padding:40px 24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+                        <div style="width:80px; height:80px; border-radius:40px; background:linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.02)); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#D4AF37; transition:all 0.3s ease;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3 style="font-weight:700; font-size:1.15rem; color:#0F3A28; margin-bottom:8px;">رصد واستكشاف</h3>
+                        <p style="font-size:0.9rem; color:#6B7280;">أجهزة اتصال ونواظير</p>
                     </div>
-                    <h3 style="font-weight:700; font-size:0.9rem;">رصد و استكشاف</h3>
                 </a>
+
             </div>
         </div>
     </section>
