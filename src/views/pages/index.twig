@@ -9,128 +9,103 @@
 {% block content %}
 
     {# 1. Hero Banner #}
-    <section class="sabaq-hero relative w-full h-[80vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="{{ 'images/hero-banner.jpg' | asset }}" alt="Sabaq Al-Oula" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0F3A28]/80 to-[#174E36]/30"></div>
+    <section style="position:relative; width:100%; min-height:500px; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+        <div style="position:absolute; inset:0; z-index:0;">
+            <img src="{{ 'images/hero-banner.jpg' | asset }}" alt="Sabaq Al-Oula" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <div style="position:absolute; inset:0; background: linear-gradient(to top, rgba(15,58,40,0.85), rgba(23,78,54,0.3));"></div>
         </div>
-        <div class="container relative z-10 text-center text-white mt-16 px-4">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-md">رحلتك تبدأ من هنا</h1>
-            <p class="text-lg md:text-2xl mb-8 font-light text-gray-200">المعدات الاحترافية لرحلات ومغامرات لا تُنسى</p>
-            <a href="{{ link('/') }}products" class="inline-block bg-[#D4AF37] text-[#0F3A28] font-bold text-lg px-8 py-3 rounded-md shadow-lg hover:bg-[#E6C76A] transition-colors border border-[#E6C76A]">تسوق الآن</a>
-        </div>
-    </section>
-
-    {# 2. Categories Section (Technical Icons) #}
-    <section class="sabaq-categories py-12 bg-[#F2F2F2]">
-        <div class="container">
-            <salla-slider type="carousel" id="sabaq-categories-slider">
-                <div slot="items" class="py-4">
-                        <div class="swiper-slide">
-                            <a href="{{ link('/') }}categories" class="flex flex-col items-center group cursor-pointer">
-                                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md border border-gray-200 mb-3 text-[#2F6F55] group-hover:bg-[#2F6F55] group-hover:border-[#D4AF37] group-hover:text-white transition-all transform group-hover:-translate-y-1">
-                                   <i class="sicon-walk text-3xl"></i>
-                                </div>
-                                <h3 class="font-bold text-[#0F3A28] text-sm md:text-base">مستلزمات التخييم</h3>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="{{ link('/') }}categories" class="flex flex-col items-center group">
-                                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md border border-gray-200 mb-3 text-[#2F6F55] group-hover:bg-[#2F6F55] group-hover:border-[#D4AF37] group-hover:text-white transition-all">
-                                   <i class="sicon-car text-3xl"></i>
-                                </div>
-                                <h3 class="font-bold text-[#0F3A28]">معدات الطرق</h3>
-                            </a>
-                        </div>
-                         <div class="swiper-slide">
-                            <a href="{{ link('/') }}categories" class="flex flex-col items-center group">
-                                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md border border-gray-200 mb-3 text-[#2F6F55] group-hover:bg-[#2F6F55] group-hover:border-[#D4AF37] group-hover:text-white transition-all">
-                                   <i class="sicon-battery text-3xl"></i>
-                                </div>
-                                <h3 class="font-bold text-[#0F3A28]">طاقة وبطاريات</h3>
-                            </a>
-                        </div>
-                         <div class="swiper-slide">
-                            <a href="{{ link('/') }}categories" class="flex flex-col items-center group">
-                                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md border border-gray-200 mb-3 text-[#2F6F55] group-hover:bg-[#2F6F55] group-hover:border-[#D4AF37] group-hover:text-white transition-all">
-                                   <i class="sicon-camera text-3xl"></i>
-                                </div>
-                                <h3 class="font-bold text-[#0F3A28]">رصد و استكشاف</h3>
-                            </a>
-                        </div>
-                </div>
-            </salla-slider>
+        <div class="container" style="position:relative; z-index:10; text-align:center; color:#fff; padding:60px 16px 40px;">
+            <h1 style="font-size:2.5rem; font-weight:700; margin-bottom:16px; text-shadow: 0 2px 8px rgba(0,0,0,0.3); font-family: 'Alexandria', sans-serif;">رحلتك تبدأ من هنا</h1>
+            <p style="font-size:1.25rem; margin-bottom:32px; font-weight:300; color:#e5e7eb;">المعدات الاحترافية لرحلات ومغامرات لا تُنسى</p>
+            <a href="{{ store.url }}" style="display:inline-block; background:#D4AF37; color:#0F3A28; font-weight:700; font-size:1.1rem; padding:12px 32px; border-radius:6px; box-shadow:0 4px 15px rgba(0,0,0,0.2); border:1px solid #E6C76A; text-decoration:none;">تسوق الآن</a>
         </div>
     </section>
 
-    {# 3. Two Rotating Banners #}
-    <section class="sabaq-rotating-banners py-12">
+    {# 2. Categories Section #}
+    <section style="padding:48px 0; background:#F2F2F2;">
         <div class="container">
-            <salla-slider type="carousel" id="sabaq-main-banners" autoplay="true" loop="true">
-                <div slot="items" class="pb-8">
-                    <div class="swiper-slide relative rounded-lg overflow-hidden h-[300px] md:h-[450px]">
-                         <img src="{{ 'images/rotating-banner-1.jpg' | asset }}" class="w-full h-full object-cover" alt="Banner 1">
-                         <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center px-4">
-                             <div class="text-center text-white max-w-lg p-6 backdrop-blur-md bg-[#0F3A28]/60 rounded-xl border border-[#D4AF37]/50 shadow-2xl">
-                                 <h2 class="text-2xl md:text-3xl font-bold mb-3 font-en tracking-wide">Field-Tested Reliability</h2>
-                                 <p class="text-sm md:text-lg text-gray-200 mb-4 font-ar">أجهزة اتصال توفر دقة لا تخطئ في أحلك الظروف البيئية.</p>
-                                 <a href="{{ link('/') }}products" class="text-[#D4AF37] hover:text-white font-bold inline-flex items-center gap-1 transition-colors">
-                                     اكتشف تشكيلتنا
-                                     <i class="sicon-keyboard_arrow_left"></i>
-                                 </a>
-                             </div>
-                         </div>
+            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:32px;">
+                <a href="{{ store.url }}" style="display:flex; flex-direction:column; align-items:center; text-decoration:none; color:#0F3A28;">
+                    <div style="width:80px; height:80px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.08); border:1px solid #e5e7eb; margin-bottom:12px; color:#2F6F55;">
+                       <i class="sicon-walk" style="font-size:1.8rem;"></i>
                     </div>
-                    <div class="swiper-slide relative rounded-lg overflow-hidden h-[300px] md:h-[450px]">
-                         <img src="{{ 'images/rotating-banner-2.jpg' | asset }}" class="w-full h-full object-cover" alt="Banner 2">
-                         <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center px-4">
-                             <div class="text-center text-white max-w-lg p-6 backdrop-blur-md bg-[#0F3A28]/60 rounded-xl border border-[#D4AF37]/50 shadow-2xl">
-                                 <h2 class="text-2xl md:text-3xl font-bold mb-3 font-en tracking-wide">Extreme Endurance</h2>
-                                 <p class="text-sm md:text-lg text-gray-200 mb-4 font-ar">معدات مصممة لتحمل أقسى التضاريس والطرق الوعرة.</p>
-                                 <a href="{{ 'products'|link }}" class="text-[#D4AF37] hover:text-white font-bold inline-flex items-center gap-1 transition-colors">
-                                     تسوق الآن
-                                     <i class="sicon-keyboard_arrow_left"></i>
-                                 </a>
-                             </div>
-                         </div>
+                    <h3 style="font-weight:700; font-size:0.9rem;">مستلزمات التخييم</h3>
+                </a>
+                <a href="{{ store.url }}" style="display:flex; flex-direction:column; align-items:center; text-decoration:none; color:#0F3A28;">
+                    <div style="width:80px; height:80px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.08); border:1px solid #e5e7eb; margin-bottom:12px; color:#2F6F55;">
+                       <i class="sicon-car" style="font-size:1.8rem;"></i>
                     </div>
-                </div>
-            </salla-slider>
-        </div>
-    </section>
-
-    {# 4. Selected Products #}
-    <section class="sabaq-featured-products py-12 bg-white">
-        <div class="container">
-            <div class="flex justify-between items-end mb-8 border-b-2 border-[#0F3A28] pb-2">
-                <div class="flex items-center gap-3">
-                    <span class="w-2 h-8 bg-[#D4AF37] block rounded-sm"></span>
-                    <h2 class="text-2xl font-bold text-[#0F3A28]">أحدث المعدات الاحترافية</h2>
-                </div>
-                <a href="{{ link('/') }}products" class="text-[#2F6F55] hover:text-[#0F3A28] font-semibold flex items-center text-sm transition-colors opacity-80 hover:opacity-100">
-                    عرض الكل
-                    <i class="sicon-keyboard_arrow_left rtl:mr-1 ltr:rotate-180"></i>
+                    <h3 style="font-weight:700; font-size:0.9rem;">معدات الطرق</h3>
+                </a>
+                <a href="{{ store.url }}" style="display:flex; flex-direction:column; align-items:center; text-decoration:none; color:#0F3A28;">
+                    <div style="width:80px; height:80px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.08); border:1px solid #e5e7eb; margin-bottom:12px; color:#2F6F55;">
+                       <i class="sicon-battery" style="font-size:1.8rem;"></i>
+                    </div>
+                    <h3 style="font-weight:700; font-size:0.9rem;">طاقة وبطاريات</h3>
+                </a>
+                <a href="{{ store.url }}" style="display:flex; flex-direction:column; align-items:center; text-decoration:none; color:#0F3A28;">
+                    <div style="width:80px; height:80px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.08); border:1px solid #e5e7eb; margin-bottom:12px; color:#2F6F55;">
+                       <i class="sicon-camera" style="font-size:1.8rem;"></i>
+                    </div>
+                    <h3 style="font-weight:700; font-size:0.9rem;">رصد و استكشاف</h3>
                 </a>
             </div>
-            
-            <salla-products-list source="latest" limit="8">
-                <template>
-                    <custom-salla-product-card shadow-on-hover class="border border-gray-100 rounded-lg hover:border-[#D4AF37]/40 transition-colors"></custom-salla-product-card>
-                </template>
-            </salla-products-list>
         </div>
     </section>
 
-    {# Fallback to standard theme components #}
-    <div class="bg-[#F2F2F2] py-8">
-        {% component home %}
-    </div>
-    
+    {# 3. Two Banners #}
+    <section style="padding:48px 0;">
+        <div class="container">
+            <salla-slider type="carousel" id="sabaq-main-banners" autoplay loop>
+                <div slot="items">
+                    <div class="swiper-slide" style="position:relative; border-radius:12px; overflow:hidden; height:400px;">
+                         <img src="{{ 'images/rotating-banner-1.jpg' | asset }}" style="width:100%; height:100%; object-fit:cover;" alt="Banner 1">
+                         <div style="position:absolute; inset:0; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; padding:16px;">
+                             <div style="text-align:center; color:#fff; max-width:500px; padding:24px; background:rgba(15,58,40,0.65); backdrop-filter:blur(8px); border-radius:12px; border:1px solid rgba(212,175,55,0.4); box-shadow:0 25px 50px rgba(0,0,0,0.25);">
+                                 <h2 style="font-size:1.6rem; font-weight:700; margin-bottom:12px; letter-spacing:1px; font-family:'Montserrat',sans-serif;">Field-Tested Reliability</h2>
+                                 <p style="font-size:1rem; color:#e5e7eb; margin-bottom:16px;">أجهزة اتصال توفر دقة لا تخطئ في أحلك الظروف البيئية.</p>
+                                 <a href="{{ store.url }}" style="color:#D4AF37; font-weight:700; text-decoration:none;">
+                                     اكتشف تشكيلتنا ←
+                                 </a>
+                             </div>
+                         </div>
+                    </div>
+                    <div class="swiper-slide" style="position:relative; border-radius:12px; overflow:hidden; height:400px;">
+                         <img src="{{ 'images/rotating-banner-2.jpg' | asset }}" style="width:100%; height:100%; object-fit:cover;" alt="Banner 2">
+                         <div style="position:absolute; inset:0; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; padding:16px;">
+                             <div style="text-align:center; color:#fff; max-width:500px; padding:24px; background:rgba(15,58,40,0.65); backdrop-filter:blur(8px); border-radius:12px; border:1px solid rgba(212,175,55,0.4); box-shadow:0 25px 50px rgba(0,0,0,0.25);">
+                                 <h2 style="font-size:1.6rem; font-weight:700; margin-bottom:12px; letter-spacing:1px; font-family:'Montserrat',sans-serif;">Extreme Endurance</h2>
+                                 <p style="font-size:1rem; color:#e5e7eb; margin-bottom:16px;">معدات مصممة لتحمل أقسى التضاريس والطرق الوعرة.</p>
+                                 <a href="{{ store.url }}" style="color:#D4AF37; font-weight:700; text-decoration:none;">
+                                     تسوق الآن ←
+                                 </a>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </salla-slider>
+        </div>
+    </section>
+
+    {# 4. Products section header #}
+    <section style="padding:32px 0 0; background:#fff;">
+        <div class="container">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:24px; border-bottom:2px solid #0F3A28; padding-bottom:8px;">
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <span style="width:4px; height:32px; background:#D4AF37; display:block; border-radius:2px;"></span>
+                    <h2 style="font-size:1.5rem; font-weight:700; color:#0F3A28;">منتجات مختارة</h2>
+                </div>
+                <a href="{{ store.url }}" style="color:#2F6F55; font-weight:600; font-size:0.9rem; text-decoration:none;">
+                    عرض الكل ←
+                </a>
+            </div>
+        </div>
+    </section>
+
+    {# 5. Standard Salla home components (renders products from your store dashboard) #}
+    {% component home %}
+
 {% endblock %}
 {% block scripts %}
     <script defer src="{{ 'home.js' | asset }}"></script>
-    <style>
-        .font-en { font-family: var(--font-en); }
-        .font-ar { font-family: var(--font-ar); }
-    </style>
 {% endblock %}
