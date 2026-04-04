@@ -218,68 +218,33 @@
 /* Sticky Solid State (when scrolling) */
 .is-homepage-hero.is-sticky {
     position: fixed;
-    background: #023017 !important;
-    box-shadow: 0 4px 30px rgba(0,0,0,0.3) !important;
+    background: var(--color-sabaq-primary) !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
 }
 .is-homepage-hero.is-sticky .main-nav-container {
-    background: #023017 !important;
+    background: var(--color-sabaq-primary) !important;
 }
 .is-homepage-hero.is-sticky .navbar-brand img {
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1); /* Keep it white on the dark green sticky navbar */
 }
 
-/* Custom Product Card Refinements for Dark Theme */
+/* Custom Product Card Refinements */
 custom-salla-product-card {
     transition: all 0.3s ease;
-    background: #064B26 !important; /* Slightly lighter than the base #023017 */
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.05);
-    overflow: hidden;
 }
 custom-salla-product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    border-color: var(--color-sabaq-accent);
-}
-custom-salla-product-card .s-product-card-content {
-    background: transparent !important;
-    padding: 16px;
-}
-custom-salla-product-card .s-product-card-title a {
-    color: #fff !important;
-}
-custom-salla-product-card .s-product-card-price {
-    color: var(--color-sabaq-accent) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(15, 58, 40, 0.1), 0 8px 10px -6px rgba(15, 58, 40, 0.1);
 }
 custom-salla-product-card .btn--add-to-cart {
-    background-color: var(--color-sabaq-accent) !important;
-    color: #023017 !important;
-    border-radius: 6px;
-    font-weight: 700;
-    border: none;
-    margin-top: 12px;
+    background-color: var(--color-sabaq-primary);
+    color: white;
+    border-radius: 4px;
+    font-weight: 600;
+    border: 1px solid var(--color-sabaq-primary);
 }
 custom-salla-product-card .btn--add-to-cart:hover {
-    background-color: #fff !important;
-    transform: scale(1.02);
-}
-
-/* Global Contrast Fixes for Salla Components */
-.s-block, .s-container, .s-products-list {
-    background-color: transparent !important;
-}
-h1, h2, h3, h4, h5, h6 {
-    color: #fff !important;
-}
-
-/* Category Grid Item Contrast */
-section[style*="padding:80px 0"] a {
-    background: #064B26 !important;
-    border-color: rgba(255,255,255,0.1) !important;
-}
-section[style*="padding:80px 0"] a h3 {
-    color: #fff !important;
-}
-section[style*="padding:80px 0"] a p {
-    color: #9ca3af !important;
+    background-color: var(--color-sabaq-accent);
+    border-color: var(--color-sabaq-accent);
+    color: var(--color-sabaq-primary);
 }

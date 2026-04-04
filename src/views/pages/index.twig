@@ -15,17 +15,15 @@
             <div style="position:absolute; inset:0; background: linear-gradient(to top, rgba(15,58,40,0.85), rgba(23,78,54,0.3));"></div>
         </div>
         <div class="container" style="position:relative; z-index:10; text-align:center; color:#fff; padding:60px 16px 40px;">
-            <h1 style="font-size:2.5rem; font-weight:700; margin-bottom:16px; text-shadow: 0 2px 8px rgba(0,0,0,0.3); font-family: 'Alexandria', sans-serif;">رحلتك تبدأ من هنا</h1>
-            <p style="font-size:1.25rem; margin-bottom:32px; font-weight:300; color:#e5e7eb;">المعدات الاحترافية لرحلات ومغامرات لا تُنسى</p>
-            <a href="{{ store.url }}" style="display:inline-block; background:#D4AF37; color:#0F3A28; font-weight:700; font-size:1.1rem; padding:12px 32px; border-radius:6px; box-shadow:0 4px 15px rgba(0,0,0,0.2); border:1px solid #E6C76A; text-decoration:none;">تسوق الآن</a>
+            {# Text removed as requested #}
         </div>
     </section>
 
     {# 2. Categories Section (Ultra Modern Design) #}
-    <section style="padding:80px 0;">
+    <section style="padding:80px 0; background:linear-gradient(to bottom, #F9FAFB, #F3F4F6);">
         <div class="container">
             <div style="text-align:center; margin-bottom:40px;">
-                <h2 style="font-size:2rem; font-weight:700; color:#fff; margin-bottom:8px;">اكتشف الأقسام</h2>
+                <h2 style="font-size:2rem; font-weight:700; color:#0F3A28; margin-bottom:8px;">اكتشف الأقسام</h2>
                 <div style="width:60px; height:4px; background:#D4AF37; margin:0 auto; border-radius:2px;"></div>
             </div>
             <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:24px; padding:0 16px;">
@@ -33,7 +31,7 @@
                 {# Category 1: Camping #}
                 <a href="{{ store.url }}" style="display:block; text-decoration:none; group; position:relative; overflow:hidden; border-radius:16px; background:#fff; box-shadow:0 10px 30px rgba(15,58,40,0.05); transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border:1px solid rgba(15,58,40,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(15,58,40,0.12)'; this.style.borderColor='rgba(212,175,55,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(15,58,40,0.05)'; this.style.borderColor='rgba(15,58,40,0.05)';">
                     <div style="padding:40px 24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
-                        <div style="width:80px; height:80px; border-radius:40px; background:rgba(47,111,85,0.25); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#4ADE80; transition:all 0.3s ease;">
+                        <div style="width:80px; height:80px; border-radius:40px; background:linear-gradient(135deg, rgba(47,111,85,0.1), rgba(47,111,85,0.02)); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#2F6F55; transition:all 0.3s ease;">
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M12 2L2 22h20L12 2z"></path>
                                 <path d="M12 15v7"></path>
@@ -47,7 +45,7 @@
                 {# Category 2: Off-road #}
                 <a href="{{ store.url }}" style="display:block; text-decoration:none; group; position:relative; overflow:hidden; border-radius:16px; background:#fff; box-shadow:0 10px 30px rgba(15,58,40,0.05); transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border:1px solid rgba(15,58,40,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(15,58,40,0.12)'; this.style.borderColor='rgba(212,175,55,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(15,58,40,0.05)'; this.style.borderColor='rgba(15,58,40,0.05)';">
                     <div style="padding:40px 24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
-                        <div style="width:80px; height:80px; border-radius:40px; background:rgba(212,175,55,0.2); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#D4AF37; transition:all 0.3s ease;">
+                        <div style="width:80px; height:80px; border-radius:40px; background:linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.02)); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#D4AF37; transition:all 0.3s ease;">
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <circle cx="12" cy="12" r="4"></circle>
@@ -65,7 +63,7 @@
                 {# Category 3: Power #}
                 <a href="{{ store.url }}" style="display:block; text-decoration:none; group; position:relative; overflow:hidden; border-radius:16px; background:#fff; box-shadow:0 10px 30px rgba(15,58,40,0.05); transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border:1px solid rgba(15,58,40,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(15,58,40,0.12)'; this.style.borderColor='rgba(212,175,55,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(15,58,40,0.05)'; this.style.borderColor='rgba(15,58,40,0.05)';">
                     <div style="padding:40px 24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
-                        <div style="width:80px; height:80px; border-radius:40px; background:rgba(47,111,85,0.25); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#4ADE80; transition:all 0.3s ease;">
+                        <div style="width:80px; height:80px; border-radius:40px; background:linear-gradient(135deg, rgba(47,111,85,0.1), rgba(47,111,85,0.02)); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#2F6F55; transition:all 0.3s ease;">
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
                             </svg>
@@ -78,7 +76,7 @@
                 {# Category 4: Observation #}
                 <a href="{{ store.url }}" style="display:block; text-decoration:none; group; position:relative; overflow:hidden; border-radius:16px; background:#fff; box-shadow:0 10px 30px rgba(15,58,40,0.05); transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border:1px solid rgba(15,58,40,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(15,58,40,0.12)'; this.style.borderColor='rgba(212,175,55,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(15,58,40,0.05)'; this.style.borderColor='rgba(15,58,40,0.05)';">
                     <div style="padding:40px 24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
-                        <div style="width:80px; height:80px; border-radius:40px; background:rgba(212,175,55,0.2); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#D4AF37; transition:all 0.3s ease;">
+                        <div style="width:80px; height:80px; border-radius:40px; background:linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.02)); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#D4AF37; transition:all 0.3s ease;">
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
@@ -114,12 +112,12 @@
     </section>
 
     {# 4. Products section header #}
-    <section style="padding:32px 0 0;">
+    <section style="padding:32px 0 0; background:#fff;">
         <div class="container">
-            <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:24px; border-bottom:2px solid rgba(212,175,55,0.3); padding-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:24px; border-bottom:2px solid #0F3A28; padding-bottom:8px;">
                 <div style="display:flex; align-items:center; gap:12px;">
                     <span style="width:4px; height:32px; background:#D4AF37; display:block; border-radius:2px;"></span>
-                    <h2 style="font-size:1.5rem; font-weight:700; color:#fff;">منتجات مختارة</h2>
+                    <h2 style="font-size:1.5rem; font-weight:700; color:#0F3A28;">منتجات مختارة</h2>
                 </div>
                 <a href="{{ store.url }}" style="color:#2F6F55; font-weight:600; font-size:0.9rem; text-decoration:none;">
                     عرض الكل ←
@@ -132,11 +130,11 @@
     {% component home %}
 
     {# 6. Payment Methods Highlight Section (Premium & Animated) #}
-    <section style="padding:80px 0; background:#023017; border-top:1px solid rgba(255,255,255,0.1);">
+    <section style="padding:80px 0; background:#f9fafb; border-top:1px solid #e5e7eb;">
         <div class="container">
             <div style="text-align:center; margin-bottom:50px;">
-                <h2 style="font-size:2rem; font-weight:800; color:#fff; margin-bottom:12px; font-family: 'Alexandria', sans-serif;">تسوق بمرونة وسهولة</h2>
-                <p style="font-size:1.1rem; color:#e5e7eb; max-width:600px; margin:0 auto;">ونوفر لك أحدث حلول الدفع الآمنة والتقسيط المريح لتجربة تسوق لا تضاهى</p>
+                <h2 style="font-size:2rem; font-weight:800; color:#0F3A28; margin-bottom:12px; font-family: 'Alexandria', sans-serif;">تسوق بمرونة وسهولة</h2>
+                <p style="font-size:1.1rem; color:#6b7280; max-width:600px; margin:0 auto;">ونوفر لك أحدث حلول الدفع الآمنة والتقسيط المريح لتجربة تسوق لا تضاهى</p>
                 <div style="width:80px; height:4px; background:#D4AF37; margin:20px auto 0; border-radius:10px;"></div>
             </div>
 
