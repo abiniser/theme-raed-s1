@@ -91,18 +91,27 @@
             --font-ar: 'Alexandria', sans-serif;
             --font-en: 'Montserrat', sans-serif;
             --font-main: var(--font-ar); /* Default to Arabic */
-            --color-sabaq-primary: #0F3A28;
-            --color-sabaq-primary-light: #174E36;
-            --color-sabaq-secondary: #2F6F55;
+            --color-sabaq-primary: #023017;
+            --color-sabaq-primary-light: #064B26;
+            --color-sabaq-secondary: #0F3A28;
             --color-sabaq-accent: #D4AF37;
             --color-sabaq-accent-light: #E6C76A;
-            --color-sabaq-neutral: #F2F2F2;
+            --color-sabaq-neutral: #0a261a;
+            --color-sabaq-bg: #023017;
+            --color-text-main: #e5e7eb;
+            --color-text-dim: #9ca3af;
 
             /* Override Salla default colors for brand consistency */
             --color-primary: var(--color-sabaq-primary) !important;
-            --color-primary-dark: #0a261a !important;
+            --color-primary-dark: #011a0d !important;
             --color-primary-light: var(--color-sabaq-primary-light) !important;
             --color-primary-reverse: var(--color-sabaq-accent) !important;
+        }
+
+        html, body {
+            background-color: var(--color-sabaq-bg);
+            color: var(--color-text-main);
+            min-height: 100%;
         }
 
         /* Enforce fonts based on language dir if possible, or just globally */
