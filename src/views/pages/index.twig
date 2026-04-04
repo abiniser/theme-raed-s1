@@ -135,65 +135,61 @@
     <section style="padding:80px 0; background:#f9fafb; border-top:1px solid #e5e7eb;">
         <div class="container">
             <div style="text-align:center; margin-bottom:50px;">
-                <h2 style="font-size:2rem; font-weight:800; color:#0F3A28; margin-bottom:12px;">تسوق بمرونة وسهولة</h2>
+                <h2 style="font-size:2rem; font-weight:800; color:#0F3A28; margin-bottom:12px; font-family: 'Alexandria', sans-serif;">تسوق بمرونة وسهولة</h2>
                 <p style="font-size:1.1rem; color:#6b7280; max-width:600px; margin:0 auto;">ونوفر لك أحدث حلول الدفع الآمنة والتقسيط المريح لتجربة تسوق لا تضاهى</p>
                 <div style="width:80px; height:4px; background:#D4AF37; margin:20px auto 0; border-radius:10px;"></div>
             </div>
 
-            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:24px; padding:0 20px;">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:24px; padding:0 20px;">
                 
                 {# Tabby Card - Highlighted #}
                 <div style="background:#fff; border-radius:20px; padding:32px; text-align:center; box-shadow:0 10px 25px rgba(0,0,0,0.05); border:2px solid #D4AF37; position:relative; overflow:hidden; transition:all 0.4s ease; cursor:default;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(212,175,55,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
-                    <div style="position:absolute; top:15px; left:{-15}px; background:#D4AF37; color:#0F3A28; padding:4px 30px; transform:rotate(-45deg); font-weight:800; font-size:0.75rem; box-shadow:0 2px 8px rgba(0,0,0,0.15);">تقسيط</div>
+                    <div style="position:absolute; top:15px; left:-18px; background:#D4AF37; color:#0F3A28; padding:4px 30px; transform:rotate(-45deg); font-weight:800; font-size:0.75rem; box-shadow:0 2px 8px rgba(0,0,0,0.15);">تقسيط</div>
                     <div style="height:60px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
-                        {# Tabby SVG Logo #}
-                        <svg width="120" height="40" viewBox="0 0 100 32" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.4 20h-3.2v-8h-3.2V8.8h9.6V12h-3.2v8zm11.2 0l-.8-2.4h-4l-.8 2.4h-3.4l4.4-11.2h4.2l4.4 11.2h-3.6zm-1.6-4.8l-1.2-4-1.2 4h2.4zm10.4 4.8V8.8h3.2v3.2c.4-.4.8-.8 1.4-1.2s1.4-.4 2-.4c1.2 0 2.2.4 2.8 1.2s1 2 .1 3c0 .8-.2 1.6-.6 2.2s-.8 1-1.4 1.4c-.6.4-1.2.6-1.8.6-1 0-1.8-.4-2.4-.8v1h-3.2zm6-2.4c.4-.4.6-1 .6-1.6s-.2-1.2-.6-1.6-.8-.6-1.4-.6-1 .2-1.4.6-.6 1-.6 1.6.2 1.2.6 1.6.8.6 1.4.6 1-.2 1.4-.6zm14.4 2.4V8.8h3.2v3.2c.4-.4.8-.8 1.4-1.2s1.4-.4 2-.4c1.2 0 2.2.4 2.8 1.2s1 2 .1 3c0 .8-.2 1.6-.6 2.2s-.8 1-1.4 1.4c-.6.4-1.2.6-1.8.6-1 0-1.8-.4-2.4-.8v1h-3.2zm6-2.4c.4-.4.6-1 .6-1.6s-.2-1.2-.6-1.6-.8-.6-1.4-.6-1 .2-1.4.6-.6 1-.6 1.6.2 1.2.6 1.6.8.6 1.4.6 1-.2 1.4-.6zm14.3 0c-.8 0-1.4-.2-2-.6-.6-.4-1-.8-1.2-1.4h3.2V15h-3.2v-1.6h3.2v-1.6h-3.2v-3h3.2V8.8h-6.4v11.2h12.8v-2.4h-3.2c-.8.8-1.8 1.2-3.2 1.2z" fill="#000"/>
-                            <path d="M5.6 20H2.4v-3.2H0v-3.2h2.4v-3.2H0V7.2h5.6c1.6 0 2.8.4 3.6 1.2s1.2 1.6 1.2 2.8c0 .8-.2 1.6-.6 2.2s-.8 1-1.4 1.4c.6.4 1 1 1.4 1.6s.6 1.4.6 2.2c0 1.2-.4 2.2-1.2 3s-2.2 1.2-3.6 1.2zM5.6 10.4H3.2v2.4h2.4c.4 0 .6-.2.8-.4s.2-.4.2-.8c0-.4-.1-.6-.2-.8s-.4-.4-.8-.4zm0 6.4H3.2v2.4h2.4c.4 0 .6-.2.8-.4s.2-.4.2-.8-.1-.6-.2-.8-.4-.4-.8-.4z" fill="#39F"/>
-                        </svg>
+                        <img src="{{ 'images/tabby.svg' | asset }}" alt="Tabby" style="max-height:100%; max-width:140px; object-fit:contain;">
                     </div>
-                    <h3 style="font-size:1.4rem; font-weight:800; color:#0F3A28; margin-bottom:12px;">تابي | Tabby</h3>
+                    <h3 style="font-size:1.3rem; font-weight:800; color:#0F3A28; margin-bottom:12px; font-family: 'Alexandria', sans-serif;">تابي | Tabby</h3>
                     <p style="font-size:0.95rem; color:#4b5563; line-height:1.5;">قسم مشترياتك على 4 دفعات شهرية بدون فوائد أو رسوم إضافية</p>
                 </div>
 
                 {# Tamara Card - Highlighted #}
                 <div style="background:#fff; border-radius:20px; padding:32px; text-align:center; box-shadow:0 10px 25px rgba(0,0,0,0.05); border:2px solid #D4AF37; position:relative; overflow:hidden; transition:all 0.4s ease; cursor:default;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(212,175,55,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
-                    <div style="position:absolute; top:15px; left:{-15}px; background:#D4AF37; color:#0F3A28; padding:4px 30px; transform:rotate(-45deg); font-weight:800; font-size:0.75rem; box-shadow:0 2px 8px rgba(0,0,0,0.15);">تقسيط</div>
+                    <div style="position:absolute; top:15px; left:-18px; background:#D4AF37; color:#0F3A28; padding:4px 30px; transform:rotate(-45deg); font-weight:800; font-size:0.75rem; box-shadow:0 2px 8px rgba(0,0,0,0.15);">تقسيط</div>
                     <div style="height:60px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
-                        {# Tamara SVG Placeholder Logo Design #}
-                        <svg width="120" height="40" viewBox="0 0 100 32" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 5l-2 2h4l-2 2-4-4h2z" fill="#9C27B0"/>
-                            <text x="5" y="24" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#9C27B0">tamara</text>
-                        </svg>
+                        <img src="{{ 'images/tamara.svg' | asset }}" alt="Tamara" style="max-height:100%; max-width:140px; object-fit:contain;">
                     </div>
-                    <h3 style="font-size:1.4rem; font-weight:800; color:#0F3A28; margin-bottom:12px;">تمارا | Tamara</h3>
+                    <h3 style="font-size:1.3rem; font-weight:800; color:#0F3A28; margin-bottom:12px; font-family: 'Alexandria', sans-serif;">تمارا | Tamara</h3>
                     <p style="font-size:0.95rem; color:#4b5563; line-height:1.5;">تسوق الآن وادفع لاحقاً عبر تمارا. قسّم مبالغك بسهولة تامة وبكل أمان</p>
                 </div>
 
-                {# Visa/Mastercard Card #}
+                {# Apple Pay Card #}
                 <div style="background:#fff; border-radius:20px; padding:32px; text-align:center; box-shadow:0 10px 25px rgba(0,0,0,0.05); border:1px solid #e5e7eb; transition:all 0.4s ease; cursor:default;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
-                    <div style="height:60px; display:flex; align-items:center; justify-content:center; margin-bottom:20px; gap:16px;">
-                        {# Visa #}
-                        <svg width="50" height="30" viewBox="0 0 45 15">
-                            <path d="M17.8 1.1c.3 3.5 2.1 6 3.1 7.2L18.4 15h-3.4l-1.9-8.5c-.2-.9-.4-1.2-1.2-1.4l-1.5-.4L10 1.1h7.8zm11 0l2.4 13.9H28l-2.4-13.9h3.2zm10.7 7.2c-.3-2.1-1.8-3.1-3.6-3.1-1.8 0-3.2.8-3.2 2.4 0 1.4 1 2 2.2 2.5 1.2.5 1.6.8 1.6 1.3s-.7 1.1-1.8 1.1c-1.2 0-1.9-.5-2.5-.9l-.4-.2-.5 3c.8.4 2.2.7 3.5.7 3.6 0 6-1.8 6-4.5 0-1.2-.5-2.1-1.3-2.3z" fill="#1A1F71"/>
-                        </svg>
-                        {# Mastercard #}
-                        <svg width="50" height="32" viewBox="0 0 32 20">
-                            <circle cx="11" cy="10" r="10" fill="#EB001B" opacity="0.8"/>
-                            <circle cx="21" cy="10" r="10" fill="#F79E1B" opacity="0.8"/>
-                        </svg>
+                    <div style="height:60px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+                        <img src="{{ 'images/apple-pay.png' | asset }}" alt="Apple Pay" style="max-height:100%; max-width:100px; object-fit:contain;">
                     </div>
-                    <h3 style="font-size:1.2rem; font-weight:700; color:#0F3A28; margin-bottom:12px;">البطاقات الائتمانية</h3>
+                    <h3 style="font-size:1.2rem; font-weight:700; color:#0F3A28; margin-bottom:12px; font-family: 'Alexandria', sans-serif;">آبل باي | Apple Pay</h3>
+                    <p style="font-size:0.9rem; color:#4b5563; line-height:1.5;">أسهل وأسرع طريقة للدفع بضغطة زر واحدة بكل أمان وخصوصية</p>
+                </div>
+
+                {# Credit Cards Card #}
+                <div style="background:#fff; border-radius:20px; padding:32px; text-align:center; box-shadow:0 10px 25px rgba(0,0,0,0.05); border:1px solid #e5e7eb; transition:all 0.4s ease; cursor:default;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div style="height:60px; display:flex; align-items:center; justify-content:center; margin-bottom:20px; gap:12px;">
+                        {# Simplified Visa/MC icons representation #}
+                        <div style="display:flex; gap:8px;">
+                            <div style="background:#1a1f71; color:#fff; font-weight:bold; padding:2px 8px; border-radius:4px; font-size:0.8rem;">VISA</div>
+                            <div style="background:#000; color:#fff; font-weight:bold; padding:2px 8px; border-radius:4px; font-size:0.8rem; display:flex; align-items:center; gap:2px;"><span style="color:#eb001b">●</span><span style="color:#f79e1b">●</span></div>
+                        </div>
+                    </div>
+                    <h3 style="font-size:1.2rem; font-weight:700; color:#0F3A28; margin-bottom:12px; font-family: 'Alexandria', sans-serif;">البطاقات الائتمانية</h3>
                     <p style="font-size:0.9rem; color:#4b5563; line-height:1.5;">نقبل جميع البطاقات الائتمانية العالمية (فيزا وماستركارد) بكل سهولة</p>
                 </div>
 
                 {# Mada Card #}
                 <div style="background:#fff; border-radius:20px; padding:32px; text-align:center; box-shadow:0 10px 25px rgba(0,0,0,0.05); border:1px solid #e5e7eb; transition:all 0.4s ease; cursor:default;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
                     <div style="height:60px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
-                        {# Mada SVG Style Placeholder #}
-                        <div style="background:linear-gradient(90deg, #1fa500, #001fcc); border-radius:4px; padding:4px 10px; color:#fff; font-weight:bold; font-family:sans-serif; font-style:italic;">mada مدى</div>
+                        <img src="{{ 'images/mada.svg' | asset }}" alt="Mada" style="max-height:100%; max-width:120px; object-fit:contain;">
                     </div>
-                    <h3 style="font-size:1.2rem; font-weight:700; color:#0F3A28; margin-bottom:12px;">بطاقات مدى | Mada</h3>
+                    <h3 style="font-size:1.2rem; font-weight:700; color:#0F3A28; margin-bottom:12px; font-family: 'Alexandria', sans-serif;">بطاقات مدى | Mada</h3>
                     <p style="font-size:0.9rem; color:#4b5563; line-height:1.5;">الدفع عبر الشبكة السعودية للمدفوعات متاح لجميع عملاء البنوك المحلية</p>
                 </div>
 
