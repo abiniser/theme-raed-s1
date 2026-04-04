@@ -17,42 +17,47 @@
         <div class="container relative z-10 text-center text-white mt-16 px-4">
             <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-md">رحلتك تبدأ من هنا</h1>
             <p class="text-lg md:text-2xl mb-8 font-light text-gray-200">المعدات الاحترافية لرحلات ومغامرات لا تُنسى</p>
-            <a href="{{ 'products'|link }}" class="inline-block bg-[#D4AF37] text-[#0F3A28] font-bold text-lg px-8 py-3 rounded-md shadow-lg hover:bg-[#E6C76A] transition-colors border border-[#E6C76A]">تسوق الآن</a>
+            <a href="{{ link('/') }}products" class="inline-block bg-[#D4AF37] text-[#0F3A28] font-bold text-lg px-8 py-3 rounded-md shadow-lg hover:bg-[#E6C76A] transition-colors border border-[#E6C76A]">تسوق الآن</a>
         </div>
     </section>
 
     {# 2. Categories Section (Technical Icons) #}
     <section class="sabaq-categories py-12 bg-[#F2F2F2]">
         <div class="container">
-            <salla-slider type="carousel" slides-per-view="4" space-between="20" id="sabaq-categories-slider">
+            <salla-slider type="carousel" id="sabaq-categories-slider">
                 <div slot="items" class="py-4">
-                    {% for category in store.categories %}
                         <div class="swiper-slide">
-                            <a href="{{ category.url }}" class="flex flex-col items-center group cursor-pointer">
+                            <a href="{{ link('/') }}categories" class="flex flex-col items-center group cursor-pointer">
                                 <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md border border-gray-200 mb-3 text-[#2F6F55] group-hover:bg-[#2F6F55] group-hover:border-[#D4AF37] group-hover:text-white transition-all transform group-hover:-translate-y-1">
-                                   <i class="{{ category.icon ?? 'sicon-compass' }} text-3xl"></i>
+                                   <i class="sicon-walk text-3xl"></i>
                                 </div>
-                                <h3 class="font-bold text-[#0F3A28] text-sm md:text-base">{{ category.name }}</h3>
+                                <h3 class="font-bold text-[#0F3A28] text-sm md:text-base">مستلزمات التخييم</h3>
                             </a>
                         </div>
-                    {% else %}
                         <div class="swiper-slide">
-                            <a href="{{ 'products'|link }}" class="flex flex-col items-center group">
+                            <a href="{{ link('/') }}categories" class="flex flex-col items-center group">
                                 <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md border border-gray-200 mb-3 text-[#2F6F55] group-hover:bg-[#2F6F55] group-hover:border-[#D4AF37] group-hover:text-white transition-all">
                                    <i class="sicon-car text-3xl"></i>
                                 </div>
                                 <h3 class="font-bold text-[#0F3A28]">معدات الطرق</h3>
                             </a>
                         </div>
-                        <div class="swiper-slide">
-                            <a href="{{ 'products'|link }}" class="flex flex-col items-center group">
+                         <div class="swiper-slide">
+                            <a href="{{ link('/') }}categories" class="flex flex-col items-center group">
                                 <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md border border-gray-200 mb-3 text-[#2F6F55] group-hover:bg-[#2F6F55] group-hover:border-[#D4AF37] group-hover:text-white transition-all">
-                                   <i class="sicon-walk text-3xl"></i>
+                                   <i class="sicon-battery text-3xl"></i>
                                 </div>
-                                <h3 class="font-bold text-[#0F3A28]">مستلزمات التخييم</h3>
+                                <h3 class="font-bold text-[#0F3A28]">طاقة وبطاريات</h3>
                             </a>
                         </div>
-                    {% endfor %}
+                         <div class="swiper-slide">
+                            <a href="{{ link('/') }}categories" class="flex flex-col items-center group">
+                                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md border border-gray-200 mb-3 text-[#2F6F55] group-hover:bg-[#2F6F55] group-hover:border-[#D4AF37] group-hover:text-white transition-all">
+                                   <i class="sicon-camera text-3xl"></i>
+                                </div>
+                                <h3 class="font-bold text-[#0F3A28]">رصد و استكشاف</h3>
+                            </a>
+                        </div>
                 </div>
             </salla-slider>
         </div>
@@ -69,7 +74,7 @@
                              <div class="text-center text-white max-w-lg p-6 backdrop-blur-md bg-[#0F3A28]/60 rounded-xl border border-[#D4AF37]/50 shadow-2xl">
                                  <h2 class="text-2xl md:text-3xl font-bold mb-3 font-en tracking-wide">Field-Tested Reliability</h2>
                                  <p class="text-sm md:text-lg text-gray-200 mb-4 font-ar">أجهزة اتصال توفر دقة لا تخطئ في أحلك الظروف البيئية.</p>
-                                 <a href="{{ 'products'|link }}" class="text-[#D4AF37] hover:text-white font-bold inline-flex items-center gap-1 transition-colors">
+                                 <a href="{{ link('/') }}products" class="text-[#D4AF37] hover:text-white font-bold inline-flex items-center gap-1 transition-colors">
                                      اكتشف تشكيلتنا
                                      <i class="sicon-keyboard_arrow_left"></i>
                                  </a>
@@ -102,7 +107,7 @@
                     <span class="w-2 h-8 bg-[#D4AF37] block rounded-sm"></span>
                     <h2 class="text-2xl font-bold text-[#0F3A28]">أحدث المعدات الاحترافية</h2>
                 </div>
-                <a href="{{ 'products'|link }}" class="text-[#2F6F55] hover:text-[#0F3A28] font-semibold flex items-center text-sm transition-colors opacity-80 hover:opacity-100">
+                <a href="{{ link('/') }}products" class="text-[#2F6F55] hover:text-[#0F3A28] font-semibold flex items-center text-sm transition-colors opacity-80 hover:opacity-100">
                     عرض الكل
                     <i class="sicon-keyboard_arrow_left rtl:mr-1 ltr:rotate-180"></i>
                 </a>
