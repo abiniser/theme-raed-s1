@@ -98,29 +98,17 @@
         <div class="container">
             <salla-slider type="carousel" id="sabaq-main-banners" autoplay loop>
                 <div slot="items">
-                    <div class="swiper-slide" style="position:relative; border-radius:12px; overflow:hidden; height:400px;">
-                         <img src="{{ 'images/rotating-banner-1.jpg' | asset }}" style="width:100%; height:100%; object-fit:cover;" alt="Banner 1">
-                         <div style="position:absolute; inset:0; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; padding:16px;">
-                             <div style="text-align:center; color:#fff; max-width:500px; padding:24px; background:rgba(15,58,40,0.65); backdrop-filter:blur(8px); border-radius:12px; border:1px solid rgba(212,175,55,0.4); box-shadow:0 25px 50px rgba(0,0,0,0.25);">
-                                 <h2 style="font-size:1.6rem; font-weight:700; margin-bottom:12px; letter-spacing:1px; font-family:'Montserrat',sans-serif;">Field-Tested Reliability</h2>
-                                 <p style="font-size:1rem; color:#e5e7eb; margin-bottom:16px;">أجهزة اتصال توفر دقة لا تخطئ في أحلك الظروف البيئية.</p>
-                                 <a href="{{ store.url }}" style="color:#D4AF37; font-weight:700; text-decoration:none;">
-                                     اكتشف تشكيلتنا ←
-                                 </a>
-                             </div>
-                         </div>
+                    <div class="swiper-slide" style="position:relative; border-radius:12px; overflow:hidden; height:400px; box-shadow:0 15px 35px rgba(0,0,0,0.1);">
+                         <a href="{{ store.url }}" style="display:block; width:100%; height:100%;">
+                             <img src="{{ 'images/rotating-banner-1.jpg' | asset }}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" alt="Banner 1">
+                             <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.3), transparent); pointer-events:none;"></div>
+                         </a>
                     </div>
-                    <div class="swiper-slide" style="position:relative; border-radius:12px; overflow:hidden; height:400px;">
-                         <img src="{{ 'images/rotating-banner-2.jpg' | asset }}" style="width:100%; height:100%; object-fit:cover;" alt="Banner 2">
-                         <div style="position:absolute; inset:0; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; padding:16px;">
-                             <div style="text-align:center; color:#fff; max-width:500px; padding:24px; background:rgba(15,58,40,0.65); backdrop-filter:blur(8px); border-radius:12px; border:1px solid rgba(212,175,55,0.4); box-shadow:0 25px 50px rgba(0,0,0,0.25);">
-                                 <h2 style="font-size:1.6rem; font-weight:700; margin-bottom:12px; letter-spacing:1px; font-family:'Montserrat',sans-serif;">Extreme Endurance</h2>
-                                 <p style="font-size:1rem; color:#e5e7eb; margin-bottom:16px;">معدات مصممة لتحمل أقسى التضاريس والطرق الوعرة.</p>
-                                 <a href="{{ store.url }}" style="color:#D4AF37; font-weight:700; text-decoration:none;">
-                                     تسوق الآن ←
-                                 </a>
-                             </div>
-                         </div>
+                    <div class="swiper-slide" style="position:relative; border-radius:12px; overflow:hidden; height:400px; box-shadow:0 15px 35px rgba(0,0,0,0.1);">
+                         <a href="{{ store.url }}" style="display:block; width:100%; height:100%;">
+                             <img src="{{ 'images/rotating-banner-2.jpg' | asset }}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" alt="Banner 2">
+                             <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.3), transparent); pointer-events:none;"></div>
+                         </a>
                     </div>
                 </div>
             </salla-slider>
