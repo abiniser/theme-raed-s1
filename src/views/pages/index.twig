@@ -98,16 +98,14 @@
         <div class="container">
             <salla-slider type="carousel" id="sabaq-main-banners" autoplay loop>
                 <div slot="items">
-                    <div class="swiper-slide" style="position:relative; border-radius:12px; overflow:hidden; height:400px; box-shadow:0 15px 35px rgba(0,0,0,0.1);">
-                         <a href="{{ store.url }}" style="display:block; width:100%; height:100%;">
-                             <img src="{{ 'images/rotating-banner-1.jpg' | asset }}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" alt="Banner 1">
-                             <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.3), transparent); pointer-events:none;"></div>
+                    <div class="swiper-slide" style="position:relative; border-radius:12px; overflow:hidden; box-shadow:0 15px 35px rgba(0,0,0,0.1);">
+                         <a href="{{ store.url }}" style="display:block; width:100%;">
+                             <img src="{{ 'images/rotating-banner-1.jpg' | asset }}" style="width:100%; height:auto; display:block; transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.02)';" onmouseout="this.style.transform='scale(1)';" alt="Banner 1">
                          </a>
                     </div>
-                    <div class="swiper-slide" style="position:relative; border-radius:12px; overflow:hidden; height:400px; box-shadow:0 15px 35px rgba(0,0,0,0.1);">
-                         <a href="{{ store.url }}" style="display:block; width:100%; height:100%;">
-                             <img src="{{ 'images/rotating-banner-2.jpg' | asset }}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" alt="Banner 2">
-                             <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.3), transparent); pointer-events:none;"></div>
+                    <div class="swiper-slide" style="position:relative; border-radius:12px; overflow:hidden; box-shadow:0 15px 35px rgba(0,0,0,0.1);">
+                         <a href="{{ store.url }}" style="display:block; width:100%;">
+                             <img src="{{ 'images/rotating-banner-2.jpg' | asset }}" style="width:100%; height:auto; display:block; transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.02)';" onmouseout="this.style.transform='scale(1)';" alt="Banner 2">
                          </a>
                     </div>
                 </div>
