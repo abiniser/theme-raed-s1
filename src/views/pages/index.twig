@@ -10,8 +10,8 @@
 
     {# 1. Hero Banner #}
     <section style="position:relative; width:100%; min-height:500px; display:flex; align-items:center; justify-content:center; overflow:hidden;">
-        <div style="position:absolute; inset:0; z-index:0;">
-            <img src="{{ 'images/hero-banner.jpg' | asset }}" alt="Sabaq Al-Oula" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <div style="position:absolute; inset:0; z-index:0;" class="init-reveal scale-soft" data-reveal>
+            <img src="{{ 'images/main-hero.svg' | asset }}" alt="Sabaq Al-Oula" style="width:100%; height:100%; object-fit:cover; display:block;">
         </div>
         <div class="container" style="position:relative; z-index:10; text-align:center; color:#fff; padding:60px 16px 40px;">
             {# Text removed as requested #}
@@ -19,16 +19,18 @@
     </section>
 
     {# 2. Categories Section (Ultra Modern Design) #}
-    <section style="padding:80px 0; background:linear-gradient(to bottom, #F9FAFB, #F3F4F6);">
-        <div class="container">
-            <div style="text-align:center; margin-bottom:40px;">
+    <section style="padding:80px 0;" class="glass-bg-container">
+        <div class="glass-orb glass-orb-1"></div>
+        <div class="glass-orb glass-orb-2"></div>
+        <div class="container glass-content">
+            <div style="text-align:center; margin-bottom:40px;" class="init-reveal reveal-up" data-reveal>
                 <h2 style="font-size:2rem; font-weight:700; color:#0F3A28; margin-bottom:8px;">اكتشف الأقسام</h2>
                 <div style="width:60px; height:4px; background:#D4AF37; margin:0 auto; border-radius:2px;"></div>
             </div>
             <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:24px; padding:0 16px;">
                 
                 {# Category 1: Camping #}
-                <a href="{{ store.url }}" style="display:block; text-decoration:none; group; position:relative; overflow:hidden; border-radius:16px; background:#fff; box-shadow:0 10px 30px rgba(15,58,40,0.05); transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border:1px solid rgba(15,58,40,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(15,58,40,0.12)'; this.style.borderColor='rgba(212,175,55,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(15,58,40,0.05)'; this.style.borderColor='rgba(15,58,40,0.05)';">
+                <a href="{{ store.url }}" style="display:block; text-decoration:none; position:relative; overflow:hidden; border-radius:16px;" class="init-reveal reveal-up delay-1 glass-panel" data-reveal>
                     <div style="padding:40px 24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
                         <div style="width:80px; height:80px; border-radius:40px; background:linear-gradient(135deg, rgba(47,111,85,0.1), rgba(47,111,85,0.02)); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#2F6F55; transition:all 0.3s ease;">
                             <img src="{{ 'images/cat-camping.svg' | asset }}" width="40" height="40" alt="معدات تخييم">
@@ -39,7 +41,7 @@
                 </a>
 
                 {# Category 2: Wireless #}
-                <a href="{{ store.url }}" style="display:block; text-decoration:none; group; position:relative; overflow:hidden; border-radius:16px; background:#fff; box-shadow:0 10px 30px rgba(15,58,40,0.05); transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border:1px solid rgba(15,58,40,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(15,58,40,0.12)'; this.style.borderColor='rgba(212,175,55,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(15,58,40,0.05)'; this.style.borderColor='rgba(15,58,40,0.05)';">
+                <a href="{{ store.url }}" style="display:block; text-decoration:none; position:relative; overflow:hidden; border-radius:16px;" class="init-reveal reveal-up delay-2 glass-panel" data-reveal>
                     <div style="padding:40px 24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
                         <div style="width:80px; height:80px; border-radius:40px; background:linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.02)); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#D4AF37; transition:all 0.3s ease;">
                             <img src="{{ 'images/cat-wireless.svg' | asset }}" width="40" height="40" alt="أجهزة لاسلكية">
@@ -50,7 +52,7 @@
                 </a>
 
                 {# Category 3: Accessories #}
-                <a href="{{ store.url }}" style="display:block; text-decoration:none; group; position:relative; overflow:hidden; border-radius:16px; background:#fff; box-shadow:0 10px 30px rgba(15,58,40,0.05); transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border:1px solid rgba(15,58,40,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(15,58,40,0.12)'; this.style.borderColor='rgba(212,175,55,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(15,58,40,0.05)'; this.style.borderColor='rgba(15,58,40,0.05)';">
+                <a href="{{ store.url }}" style="display:block; text-decoration:none; position:relative; overflow:hidden; border-radius:16px;" class="init-reveal reveal-up delay-3 glass-panel" data-reveal>
                     <div style="padding:40px 24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
                         <div style="width:80px; height:80px; border-radius:40px; background:linear-gradient(135deg, rgba(47,111,85,0.1), rgba(47,111,85,0.02)); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#2F6F55; transition:all 0.3s ease;">
                             <img src="{{ 'images/cat-accessories.svg' | asset }}" width="40" height="40" alt="اكسسوارات">
@@ -61,7 +63,7 @@
                 </a>
 
                 {# Category 4: Binoculars #}
-                <a href="{{ store.url }}" style="display:block; text-decoration:none; group; position:relative; overflow:hidden; border-radius:16px; background:#fff; box-shadow:0 10px 30px rgba(15,58,40,0.05); transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border:1px solid rgba(15,58,40,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(15,58,40,0.12)'; this.style.borderColor='rgba(212,175,55,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(15,58,40,0.05)'; this.style.borderColor='rgba(15,58,40,0.05)';">
+                <a href="{{ store.url }}" style="display:block; text-decoration:none; position:relative; overflow:hidden; border-radius:16px;" class="init-reveal reveal-up delay-4 glass-panel" data-reveal>
                     <div style="padding:40px 24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
                         <div style="width:80px; height:80px; border-radius:40px; background:linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.02)); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#D4AF37; transition:all 0.3s ease;">
                             <img src="{{ 'images/cat-binoculars.svg' | asset }}" width="40" height="40" alt="درابيل">
@@ -76,18 +78,18 @@
     </section>
 
     {# 3. Two Banners #}
-    <section style="padding:48px 0;">
+    <section style="padding:48px 0;" class="init-reveal reveal-up" data-reveal>
         <div class="container">
             <salla-slider type="carousel" id="sabaq-main-banners" autoplay loop>
                 <div slot="items">
                     <div class="swiper-slide" style="position:relative; border-radius:12px; overflow:hidden; box-shadow:0 15px 35px rgba(0,0,0,0.1);">
                          <a href="{{ store.url }}" style="display:block; width:100%;">
-                             <img src="{{ 'images/rotating-banner-1.jpg' | asset }}" style="width:100%; height:auto; display:block; transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.02)';" onmouseout="this.style.transform='scale(1)';" alt="Banner 1">
+                             <img src="{{ 'images/man.svg' | asset }}" style="width:100%; height:auto; display:block; transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.02)';" onmouseout="this.style.transform='scale(1)';" alt="Banner 1">
                          </a>
                     </div>
                     <div class="swiper-slide" style="position:relative; border-radius:12px; overflow:hidden; box-shadow:0 15px 35px rgba(0,0,0,0.1);">
                          <a href="{{ store.url }}" style="display:block; width:100%;">
-                             <img src="{{ 'images/rotating-banner-2.jpg' | asset }}" style="width:100%; height:auto; display:block; transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.02)';" onmouseout="this.style.transform='scale(1)';" alt="Banner 2">
+                             <img src="{{ 'images/product-banner.svg' | asset }}" style="width:100%; height:auto; display:block; transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.02)';" onmouseout="this.style.transform='scale(1)';" alt="Banner 2">
                          </a>
                     </div>
                 </div>
@@ -96,7 +98,7 @@
     </section>
 
     {# 4. Products section header #}
-    <section style="padding:32px 0 0; background:#fff;">
+    <section style="padding:32px 0 0; background:#fff;" class="init-reveal reveal-up" data-reveal>
         <div class="container">
             <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:24px; border-bottom:2px solid #0F3A28; padding-bottom:8px;">
                 <div style="display:flex; align-items:center; gap:12px;">
@@ -114,9 +116,11 @@
     {% component home %}
 
     {# 6. Payment Methods Highlight Section (Premium & Animated) #}
-    <section style="padding:80px 0; background:#f9fafb; border-top:1px solid #e5e7eb;">
-        <div class="container">
-            <div style="text-align:center; margin-bottom:50px;">
+    <section style="padding:80px 0; border-top:1px solid #e5e7eb;" class="glass-bg-container">
+        <div class="glass-orb glass-orb-1" style="background: var(--color-sabaq-accent); right:auto; left:-50px; top:0;"></div>
+        <div class="glass-orb glass-orb-2" style="background: var(--color-sabaq-primary-light); left:auto; right:-50px; bottom:0;"></div>
+        <div class="container glass-content">
+            <div style="text-align:center; margin-bottom:50px;" class="init-reveal reveal-up" data-reveal>
                 <h2 style="font-size:2rem; font-weight:800; color:#0F3A28; margin-bottom:12px; font-family: 'Alexandria', sans-serif;">تسوق بمرونة وسهولة</h2>
                 <p style="font-size:1.1rem; color:#6b7280; max-width:600px; margin:0 auto;">ونوفر لك أحدث حلول الدفع الآمنة والتقسيط المريح لتجربة تسوق لا تضاهى</p>
                 <div style="width:80px; height:4px; background:#D4AF37; margin:20px auto 0; border-radius:10px;"></div>
@@ -125,7 +129,7 @@
             <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:24px; padding:0 20px;">
                 
                 {# Tabby Card - Highlighted #}
-                <div style="background:#fff; border-radius:20px; padding:32px; text-align:center; box-shadow:0 10px 25px rgba(0,0,0,0.05); border:2px solid #D4AF37; position:relative; overflow:hidden; transition:all 0.4s ease; cursor:default;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(212,175,55,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                <div style="border-radius:20px; padding:32px; text-align:center; border:2px solid #D4AF37; position:relative; overflow:hidden;" class="init-reveal reveal-up delay-1 glass-panel" data-reveal>
                     <div style="position:absolute; top:15px; left:-18px; background:#D4AF37; color:#0F3A28; padding:4px 30px; transform:rotate(-45deg); font-weight:800; font-size:0.75rem; box-shadow:0 2px 8px rgba(0,0,0,0.15);">تقسيط</div>
                     <div style="height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
                         <img src="{{ 'images/tabby.png' | asset }}" alt="Tabby" style="max-height:100%; width:auto; max-width:220px; object-fit:contain;">
@@ -135,7 +139,7 @@
                 </div>
 
                 {# Tamara Card - Highlighted #}
-                <div style="background:#fff; border-radius:20px; padding:32px; text-align:center; box-shadow:0 10px 25px rgba(0,0,0,0.05); border:2px solid #D4AF37; position:relative; overflow:hidden; transition:all 0.4s ease; cursor:default;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(212,175,55,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                <div style="border-radius:20px; padding:32px; text-align:center; border:2px solid #D4AF37; position:relative; overflow:hidden;" class="init-reveal reveal-up delay-2 glass-panel" data-reveal>
                     <div style="position:absolute; top:15px; left:-18px; background:#D4AF37; color:#0F3A28; padding:4px 30px; transform:rotate(-45deg); font-weight:800; font-size:0.75rem; box-shadow:0 2px 8px rgba(0,0,0,0.15);">تقسيط</div>
                     <div style="height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
                         <img src="{{ 'images/tamara.svg' | asset }}" alt="Tamara" style="max-height:100%; width:auto; max-width:220px; object-fit:contain;">
@@ -145,7 +149,7 @@
                 </div>
 
                 {# Apple Pay Card #}
-                <div style="background:#fff; border-radius:20px; padding:32px; text-align:center; box-shadow:0 10px 25px rgba(0,0,0,0.05); border:1px solid #e5e7eb; transition:all 0.4s ease; cursor:default;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                <div style="border-radius:20px; padding:32px; text-align:center; border:1px solid rgba(255,255,255,0.2);" class="init-reveal reveal-up delay-3 glass-panel" data-reveal>
                     <div style="height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
                         <img src="{{ 'images/apple-pay.png' | asset }}" alt="Apple Pay" style="max-height:85%; width:auto; max-width:140px; object-fit:contain;">
                     </div>
@@ -154,7 +158,7 @@
                 </div>
 
                 {# Mada Card #}
-                <div style="background:#fff; border-radius:20px; padding:32px; text-align:center; box-shadow:0 10px 25px rgba(0,0,0,0.05); border:1px solid #e5e7eb; transition:all 0.4s ease; cursor:default;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                <div style="border-radius:20px; padding:32px; text-align:center; border:1px solid rgba(255,255,255,0.2);" class="init-reveal reveal-up delay-4 glass-panel" data-reveal>
                     <div style="height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
                         <img src="{{ 'images/mada.svg' | asset }}" alt="Mada" style="max-height:85%; width:auto; max-width:140px; object-fit:contain;">
                     </div>
@@ -169,4 +173,25 @@
 {% endblock %}
 {% block scripts %}
     <script defer src="{{ 'home.js' | asset }}"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          const observerOptions = {
+              root: null,
+              rootMargin: '0px',
+              threshold: 0.1
+          };
+          const observer = new IntersectionObserver((entries, observer) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add('revealed');
+                      observer.unobserve(entry.target);
+                  }
+              });
+          }, observerOptions);
+
+          document.querySelectorAll('[data-reveal]').forEach((el) => {
+              observer.observe(el);
+          });
+      });
+    </script>
 {% endblock %}

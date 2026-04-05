@@ -112,6 +112,29 @@
         html[dir="ltr"], body.ltr {
             font-family: var(--font-en);
         }
+
+        /* Premium Preloader */
+        #sabaq-preloader {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: var(--color-sabaq-primary);
+            z-index: 999999;
+            display: flex; justify-content: center; align-items: center;
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+        }
+        #sabaq-preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .preloader-logo {
+            width: 180px;
+            animation: pulsePreloader 2s infinite ease-in-out;
+        }
+        @keyframes pulsePreloader {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1.05); opacity: 1; filter: drop-shadow(0 0 25px rgba(212,175,55,0.5)); }
+            100% { transform: scale(0.95); opacity: 0.7; }
+        }
     </style>
     {# tracking services, custom css feature. #}
     {% hook 'head:end' %}
@@ -121,6 +144,21 @@
   {{ theme.settings.get('topnav_is_dark') ? ' topnav-is-dark' : '' }}
   {{ theme.settings.get('sticky_add_to_cart') ? ' is-sticky-product-bar' : '' }}
   ">
+<!-- Sabaq Al-Oula Preloader -->
+<div id="sabaq-preloader">
+    <img src="{{ 'images/sabaq-logo.png' | asset }}" alt="Loading" class="preloader-logo">
+</div>
+<script>
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            var preloader = document.getElementById('sabaq-preloader');
+            if (preloader) {
+                preloader.classList.add('loaded');
+                setTimeout(function(){ preloader.remove(); }, 800);
+            }
+        }, 400); // 400ms delay to ensure premium feel and display
+    });
+</script>
 <noscript>
     To get full functionality of this site you need to enable JavaScript. Here is how
     <a href="https://www.enable-javascript.com/" rel="noreferrer"
@@ -138,6 +176,24 @@
 {% if theme.settings.get('enable_add_product_toast', true) %}
     <salla-add-product-toast></salla-add-product-toast>
 {% endif %}
+
+<!-- SVG Filter for Liquid Glass Button Effect -->
+<svg style="visibility: hidden; position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+        <filter id="liquid-glass-distortion">
+            <!-- Generate organic noise -->
+            <feTurbulence type="fractalNoise" baseFrequency="0.01 0.05" numOctaves="2" result="noise">
+                <!-- Animate the noise for a liquid feel -->
+                <animate attributeName="baseFrequency" values="0.01 0.05; 0.02 0.08; 0.01 0.05" dur="4s" repeatCount="indefinite"/>
+            </feTurbulence>
+            <!-- Displace the button using the noise -->
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
+            <!-- Apply a subtle Gaussian blur to simulate the blurAmount object -->
+            <feGaussianBlur stdDeviation="0.5" />
+        </filter>
+    </defs>
+</svg>
+
 <script defer crossorigin="anonymous" src="{{ 'app.js' | asset }}"></script>
 
 {# Twilight Components #}

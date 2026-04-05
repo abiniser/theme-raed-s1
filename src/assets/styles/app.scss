@@ -228,23 +228,112 @@
     filter: brightness(0) invert(1); /* Keep it white on the dark green sticky navbar */
 }
 
-/* Custom Product Card Refinements */
+/* Custom Product Card Refinements - Liquid Glass Effect */
 custom-salla-product-card {
-    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 40px -10px rgba(15, 58, 40, 0.08) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 custom-salla-product-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px -5px rgba(15, 58, 40, 0.1), 0 8px 10px -6px rgba(15, 58, 40, 0.1);
+    background: rgba(255, 255, 255, 0.85) !important;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(15, 58, 40, 0.15) !important;
+    border: 1px solid rgba(212, 175, 55, 0.4) !important;
 }
+/* Liquid Glass Generic Button Class */
+.liquid-glass-btn,
 custom-salla-product-card .btn--add-to-cart {
-    background-color: var(--color-sabaq-primary);
-    color: white;
-    border-radius: 4px;
-    font-weight: 600;
-    border: 1px solid var(--color-sabaq-primary);
+    border-radius: 10px !important;
+    padding: 8px 16px !important;
+    font-weight: 600 !important;
+    color: white !important;
+    
+    /* Authentic Glassmorphism */
+    background: rgba(15, 58, 40, 0.7) !important; /* Sabaq primary translucent */
+    backdrop-filter: blur(16px) saturate(1.2);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 4px 15px rgba(15, 58, 40, 0.2) !important;
+    
+    /* Smooth interaction */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
 }
+
+.liquid-glass-btn:hover,
 custom-salla-product-card .btn--add-to-cart:hover {
-    background-color: var(--color-sabaq-accent);
-    border-color: var(--color-sabaq-accent);
-    color: var(--color-sabaq-primary);
+    background: rgba(15, 58, 40, 0.85) !important;
+    color: var(--color-sabaq-accent-light) !important;
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.25) !important;
+    border-color: rgba(212, 175, 55, 0.6) !important;
+    transform: translateY(-2px);
+    
+    /* The core displacement WebGL/SVG Liquid Glass imitation */
+    filter: url('#liquid-glass-distortion');
+}
+
+/* --- PREMIUM LIQUID GLASS EFFECTS --- */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 10px 40px -10px rgba(15, 58, 40, 0.08) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.glass-panel:hover {
+    background: rgba(255, 255, 255, 0.85) !important;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(15, 58, 40, 0.15) !important;
+    border: 1px solid rgba(212, 175, 55, 0.4) !important;
+}
+
+.glass-bg-container {
+    position: relative;
+    overflow: hidden;
+    background: #F3F4F6 !important;
+}
+
+.glass-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: 0;
+    opacity: 0.5;
+    animation: orbFloat 10s infinite alternate ease-in-out;
+}
+
+.glass-orb-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--color-sabaq-primary-light);
+    top: -50px;
+    right: -50px;
+}
+
+.glass-orb-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--color-sabaq-accent);
+    bottom: -100px;
+    left: -100px;
+    animation-delay: -5s;
+    opacity: 0.2;
+}
+
+@keyframes orbFloat {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, 30px) scale(1.1); }
+}
+
+.glass-content {
+    position: relative;
+    z-index: 10;
 }

@@ -957,6 +957,64 @@ input[type=radio].sr-only:checked ~ div.s-app-install-banner-cancel-button {
   animation-fill-mode: both;
   animation-iteration-count: 1;
 }
+/* SABAQ AL-OULA PREMIUM ANIMATIONS */
+@keyframes revealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scaleSoft {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+/* Premium Animations Logic */
+.init-reveal {
+  opacity: 0;
+  visibility: hidden;
+}
+.init-reveal.revealed {
+  visibility: visible;
+}
+.init-reveal.revealed.reveal-up {
+  animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.init-reveal.revealed.scale-soft {
+  animation: scaleSoft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.delay-1 {
+  animation-delay: 100ms;
+}
+.delay-2 {
+  animation-delay: 200ms;
+}
+.delay-3 {
+  animation-delay: 300ms;
+}
+.delay-4 {
+  animation-delay: 400ms;
+}
+.delay-5 {
+  animation-delay: 500ms;
+}
 .swiper-lazy {
     opacity: 0;
     transition-property: opacity;
@@ -7740,6 +7798,16 @@ input:where([type='file']):focus {
 }
 .outline {
     outline-style: solid;
+}
+.blur {
+    --tw-blur: blur(8px);
+    filter: blur(8px) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.drop-shadow {
+    --tw-drop-shadow: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06));
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06));
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .filter {
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -27816,6 +27884,64 @@ input[type=radio].sr-only:checked ~ div.s-app-install-banner-cancel-button {
   animation-fill-mode: both;
   animation-iteration-count: 1;
 }
+/* SABAQ AL-OULA PREMIUM ANIMATIONS */
+@keyframes revealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scaleSoft {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+/* Premium Animations Logic */
+.init-reveal {
+  opacity: 0;
+  visibility: hidden;
+}
+.init-reveal.revealed {
+  visibility: visible;
+}
+.init-reveal.revealed.reveal-up {
+  animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.init-reveal.revealed.scale-soft {
+  animation: scaleSoft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.delay-1 {
+  animation-delay: 100ms;
+}
+.delay-2 {
+  animation-delay: 200ms;
+}
+.delay-3 {
+  animation-delay: 300ms;
+}
+.delay-4 {
+  animation-delay: 400ms;
+}
+.delay-5 {
+  animation-delay: 500ms;
+}
 .swiper-lazy {
     opacity: 0;
     transition-property: opacity;
@@ -33487,25 +33613,122 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 .is-homepage-hero.is-sticky .navbar-brand img {
   filter: brightness(0) invert(1); /* Keep it white on the dark green sticky navbar */
 }
-/* Custom Product Card Refinements */
+/* Custom Product Card Refinements - Liquid Glass Effect */
 custom-salla-product-card {
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 40px -10px rgba(15, 58, 40, 0.08) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+custom-salla-product-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 custom-salla-product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px -5px rgba(15, 58, 40, 0.1), 0 8px 10px -6px rgba(15, 58, 40, 0.1);
+  background: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 0 20px 40px -10px rgba(15, 58, 40, 0.15) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
 }
+custom-salla-product-card:hover {
+  transform: translateY(-8px);
+}
+/* Liquid Glass Generic Button Class */
+.liquid-glass-btn,
 custom-salla-product-card .btn--add-to-cart {
-  background-color: var(--color-sabaq-primary);
-  color: white;
-  border-radius: 4px;
-  font-weight: 600;
-  border: 1px solid var(--color-sabaq-primary);
+  border-radius: 10px !important;
+  padding: 8px 16px !important;
+  font-weight: 600 !important;
+  color: white !important;
+  background: rgba(15, 58, 40, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 4px 15px rgba(15, 58, 40, 0.2) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
+.liquid-glass-btn,
+custom-salla-product-card .btn--add-to-cart {
+  /* Authentic Glassmorphism */ /* Sabaq primary translucent */
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  /* Smooth interaction */
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+.liquid-glass-btn:hover,
 custom-salla-product-card .btn--add-to-cart:hover {
-  background-color: var(--color-sabaq-accent);
-  border-color: var(--color-sabaq-accent);
-  color: var(--color-sabaq-primary);
+  background: rgba(15, 58, 40, 0.85) !important;
+  color: var(--color-sabaq-accent-light) !important;
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.25) !important;
+  border-color: rgba(212, 175, 55, 0.6) !important;
+}
+.liquid-glass-btn:hover,
+custom-salla-product-card .btn--add-to-cart:hover {
+  transform: translateY(-2px);
+  /* The core displacement WebGL/SVG Liquid Glass imitation */
+  filter: url("#liquid-glass-distortion");
+}
+/* --- PREMIUM LIQUID GLASS EFFECTS --- */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 10px 40px -10px rgba(15, 58, 40, 0.08) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.glass-panel {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.glass-panel:hover {
+  background: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 0 20px 40px -10px rgba(15, 58, 40, 0.15) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+}
+.glass-panel:hover {
+  transform: translateY(-8px);
+}
+.glass-bg-container {
+  background: #F3F4F6 !important;
+}
+.glass-bg-container {
+  position: relative;
+  overflow: hidden;
+}
+.glass-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 0;
+  opacity: 0.5;
+  animation: orbFloat 10s infinite alternate ease-in-out;
+}
+.glass-orb-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--color-sabaq-primary-light);
+  top: -50px;
+  right: -50px;
+}
+.glass-orb-2 {
+  width: 400px;
+  height: 400px;
+  background: var(--color-sabaq-accent);
+  bottom: -100px;
+  left: -100px;
+  animation-delay: -5s;
+  opacity: 0.2;
+}
+@keyframes orbFloat {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(30px, 30px) scale(1.1);
+  }
+}
+.glass-content {
+  position: relative;
+  z-index: 10;
 }
 .before\:text-orange-300::before {
     content: var(--tw-content);
