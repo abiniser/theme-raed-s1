@@ -11,12 +11,7 @@ class NavigationMenu extends HTMLElement {
 
                 return salla.api.component.getMenus()
                 .then(({ data }) => {
-                    this.menus = [
-                        { title: 'معدات تخييم', url: '#', children: [], attrs: '', link_attrs: '' },
-                        { title: 'أجهزة لاسلكية', url: '#', children: [], attrs: '', link_attrs: '' },
-                        { title: 'اكسسوارات', url: '#', children: [], attrs: '', link_attrs: '' },
-                        { title: 'درابيل', url: '#', children: [], attrs: '', link_attrs: '' },
-                    ];
+                    this.menus = data || [];
                     return this.render()
                 }).then(() => {
                     this.initializeResponsiveMenu();
