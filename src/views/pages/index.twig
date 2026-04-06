@@ -8,23 +8,160 @@
 {% extends "layouts.master" %}
 {% block content %}
 
-    {# ===================================================================
-       ALL HOMEPAGE BLOCKS (Slider, Categories, Products, Banners, etc.)
-       are now FULLY CONTROLLED from the Salla Editor Dashboard.
-       
-       Go to: Salla Editor → الصفحة الرئيسية → عناصر الصفحة الرئيسية
-       Click "+ إضافة عنصر جديد" to add:
-         - صور متحركة (Image Slider / Banners)
-         - روابط سريعة (Quick Links / Categories)
-         - منتجات مميزة (Featured Products)
-         - بنر ثابت (Fixed Banner)
-         - شهادات العملاء (Testimonials)
-         - فيديو يوتيوب (YouTube Video)
-         - and more...
-       =================================================================== #}
+    {# 1. Hero Banner #}
+    <section style="position:relative; width:100%; min-height:500px; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+        <div style="position:absolute; inset:0; z-index:0;" class="init-reveal scale-soft" data-reveal>
+            <img src="{{ 'images/main-hero.svg' | asset }}" alt="Sabaq Al-Oula" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+        <div class="container" style="position:relative; z-index:10; text-align:center; color:#fff; padding:60px 16px 40px;">
+            {# Text removed as requested #}
+        </div>
+    </section>
+
+    {# 2. Categories Section - Now DYNAMIC from Salla API #}
+    <section style="padding:80px 0;" class="glass-bg-container">
+        <div class="glass-orb glass-orb-1"></div>
+        <div class="glass-orb glass-orb-2"></div>
+        <div class="container glass-content">
+            <div style="text-align:center; margin-bottom:40px;" class="init-reveal reveal-up" data-reveal>
+                <h2 style="font-size:2rem; font-weight:700; color:#0F3A28; margin-bottom:8px;">اكتشف الأقسام</h2>
+                <div style="width:60px; height:4px; background:#D4AF37; margin:0 auto; border-radius:2px;"></div>
+            </div>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:24px; padding:0 16px;">
+                {# Dynamic categories from Salla store #}
+                {% for category in store.footer_categories %}
+                    <a href="{{ category.url }}" style="display:block; text-decoration:none; position:relative; overflow:hidden; border-radius:16px;" class="init-reveal reveal-up delay-{{ loop.index }} glass-panel" data-reveal>
+                        <div style="padding:40px 24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+                            <div style="width:80px; height:80px; border-radius:40px; background:linear-gradient(135deg, rgba(47,111,85,0.1), rgba(47,111,85,0.02)); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:#2F6F55; transition:all 0.3s ease;">
+                                {% if category.image %}
+                                    <img src="{{ category.image }}" width="40" height="40" alt="{{ category.name }}">
+                                {% else %}
+                                    <i class="sicon-category" style="font-size:32px;"></i>
+                                {% endif %}
+                            </div>
+                            <h3 style="font-weight:700; font-size:1.15rem; color:#0F3A28; margin-bottom:8px; font-family: 'Alexandria', sans-serif;">{{ category.name }}</h3>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {# 3. Two Banners #}
+    <section style="padding:48px 0;" class="init-reveal reveal-up" data-reveal>
+        <div class="container">
+            <salla-slider type="carousel" id="sabaq-main-banners" autoplay loop>
+                <div slot="items">
+                    <div class="swiper-slide" style="position:relative; border-radius:12px; overflow:hidden; box-shadow:0 15px 35px rgba(0,0,0,0.1);">
+                         <a href="{{ store.url }}" style="display:block; width:100%;">
+                             <img src="{{ 'images/man.svg' | asset }}" style="width:100%; height:auto; display:block; transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.02)';" onmouseout="this.style.transform='scale(1)';" alt="Banner 1">
+                         </a>
+                    </div>
+                    <div class="swiper-slide" style="position:relative; border-radius:12px; overflow:hidden; box-shadow:0 15px 35px rgba(0,0,0,0.1);">
+                         <a href="{{ store.url }}" style="display:block; width:100%;">
+                             <img src="{{ 'images/product-banner.svg' | asset }}" style="width:100%; height:auto; display:block; transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.02)';" onmouseout="this.style.transform='scale(1)';" alt="Banner 2">
+                         </a>
+                    </div>
+                </div>
+            </salla-slider>
+        </div>
+    </section>
+
+    {# 4. Products section header #}
+    <section style="padding:32px 0 0; background:#fff;" class="init-reveal reveal-up" data-reveal>
+        <div class="container">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:24px; border-bottom:2px solid #0F3A28; padding-bottom:8px;">
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <span style="width:4px; height:32px; background:#D4AF37; display:block; border-radius:2px;"></span>
+                    <h2 style="font-size:1.5rem; font-weight:700; color:#0F3A28;">منتجات مختارة</h2>
+                </div>
+                <a href="{{ store.url }}" style="color:#2F6F55; font-weight:600; font-size:0.9rem; text-decoration:none;">
+                    عرض الكل ←
+                </a>
+            </div>
+        </div>
+    </section>
+
+    {# 5. Dynamic home components from Salla Editor #}
     {% component home %}
+
+    {# 6. Payment Methods Highlight Section #}
+    <section style="padding:80px 0; border-top:1px solid #e5e7eb;" class="glass-bg-container">
+        <div class="glass-orb glass-orb-1" style="background: var(--color-sabaq-accent); right:auto; left:-50px; top:0;"></div>
+        <div class="glass-orb glass-orb-2" style="background: var(--color-sabaq-primary-light); left:auto; right:-50px; bottom:0;"></div>
+        <div class="container glass-content">
+            <div style="text-align:center; margin-bottom:50px;" class="init-reveal reveal-up" data-reveal>
+                <h2 style="font-size:2rem; font-weight:800; color:#0F3A28; margin-bottom:12px; font-family: 'Alexandria', sans-serif;">تسوق بمرونة وسهولة</h2>
+                <p style="font-size:1.1rem; color:#6b7280; max-width:600px; margin:0 auto;">ونوفر لك أحدث حلول الدفع الآمنة والتقسيط المريح لتجربة تسوق لا تضاهى</p>
+                <div style="width:80px; height:4px; background:#D4AF37; margin:20px auto 0; border-radius:10px;"></div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:24px; padding:0 20px;">
+                
+                {# Tabby Card #}
+                <div style="border-radius:20px; padding:32px; text-align:center; border:2px solid #D4AF37; position:relative; overflow:hidden;" class="init-reveal reveal-up delay-1 glass-panel" data-reveal>
+                    <div style="position:absolute; top:15px; left:-18px; background:#D4AF37; color:#0F3A28; padding:4px 30px; transform:rotate(-45deg); font-weight:800; font-size:0.75rem; box-shadow:0 2px 8px rgba(0,0,0,0.15);">تقسيط</div>
+                    <div style="height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+                        <img src="{{ 'images/tabby.png' | asset }}" alt="Tabby" style="max-height:100%; width:auto; max-width:220px; object-fit:contain;">
+                    </div>
+                    <h3 style="font-size:1.3rem; font-weight:800; color:#0F3A28; margin-bottom:12px; font-family: 'Alexandria', sans-serif;">تابي | Tabby</h3>
+                    <p style="font-size:0.95rem; color:#4b5563; line-height:1.5;">قسم مشترياتك على 4 دفعات شهرية بدون فوائد أو رسوم إضافية</p>
+                </div>
+
+                {# Tamara Card #}
+                <div style="border-radius:20px; padding:32px; text-align:center; border:2px solid #D4AF37; position:relative; overflow:hidden;" class="init-reveal reveal-up delay-2 glass-panel" data-reveal>
+                    <div style="position:absolute; top:15px; left:-18px; background:#D4AF37; color:#0F3A28; padding:4px 30px; transform:rotate(-45deg); font-weight:800; font-size:0.75rem; box-shadow:0 2px 8px rgba(0,0,0,0.15);">تقسيط</div>
+                    <div style="height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+                        <img src="{{ 'images/tamara.svg' | asset }}" alt="Tamara" style="max-height:100%; width:auto; max-width:220px; object-fit:contain;">
+                    </div>
+                    <h3 style="font-size:1.3rem; font-weight:800; color:#0F3A28; margin-bottom:12px; font-family: 'Alexandria', sans-serif;">تمارا | Tamara</h3>
+                    <p style="font-size:0.95rem; color:#4b5563; line-height:1.5;">تسوق الآن وادفع لاحقاً عبر تمارا. قسّم مبالغك بسهولة تامة وبكل أمان</p>
+                </div>
+
+                {# Apple Pay Card #}
+                <div style="border-radius:20px; padding:32px; text-align:center; border:1px solid rgba(255,255,255,0.2);" class="init-reveal reveal-up delay-3 glass-panel" data-reveal>
+                    <div style="height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+                        <img src="{{ 'images/apple-pay.png' | asset }}" alt="Apple Pay" style="max-height:85%; width:auto; max-width:140px; object-fit:contain;">
+                    </div>
+                    <h3 style="font-size:1.2rem; font-weight:700; color:#0F3A28; margin-bottom:12px; font-family: 'Alexandria', sans-serif;">آبل باي | Apple Pay</h3>
+                    <p style="font-size:0.9rem; color:#4b5563; line-height:1.5;">أسهل وأسرع طريقة للدفع بضغطة زر واحدة بكل أمان وخصوصية</p>
+                </div>
+
+                {# Mada Card #}
+                <div style="border-radius:20px; padding:32px; text-align:center; border:1px solid rgba(255,255,255,0.2);" class="init-reveal reveal-up delay-4 glass-panel" data-reveal>
+                    <div style="height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+                        <img src="{{ 'images/mada.svg' | asset }}" alt="Mada" style="max-height:85%; width:auto; max-width:140px; object-fit:contain;">
+                    </div>
+                    <h3 style="font-size:1.2rem; font-weight:700; color:#0F3A28; margin-bottom:12px; font-family: 'Alexandria', sans-serif;">بطاقات مدى | Mada</h3>
+                    <p style="font-size:0.9rem; color:#4b5563; line-height:1.5;">الدفع عبر الشبكة السعودية للمدفوعات متاح لجميع عملاء البنوك المحلية</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
 {% block scripts %}
     <script defer src="{{ 'home.js' | asset }}"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          const observerOptions = {
+              root: null,
+              rootMargin: '0px',
+              threshold: 0.1
+          };
+          const observer = new IntersectionObserver((entries, observer) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add('revealed');
+                      observer.unobserve(entry.target);
+                  }
+              });
+          }, observerOptions);
+
+          document.querySelectorAll('[data-reveal]').forEach((el) => {
+              observer.observe(el);
+          });
+      });
+    </script>
 {% endblock %}
