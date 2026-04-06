@@ -13,7 +13,7 @@
     "production": "webpack --mode production",
     "prod": "webpack --mode production",
     "development": "webpack --mode development",
-    "watch": "webpack --mode development --watch"
+    "watch": "SET NODE_OPTIONS=--max-old-space-size=4096 && webpack --mode development --watch"
   },
   "author": "Salla",
   "dependencies": {
