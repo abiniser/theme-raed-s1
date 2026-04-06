@@ -8,8 +8,52 @@
 | component.links[].icon             | string   |                                                                              |
 | component.links[].title            | string   |                                                                              |
 | component.links[].url              | string   |                                                                              |
+| component.show_cats                | bool     | Whether to show categories mode                                              |
+| component.categories               | object[] | list of categories (when show_cats is true)                                  |
+| component.categories[].url         | string   | Category page URL                                                            |
+| component.categories[].image       | string   | Category image                                                               |
+| component.categories[].name        | string   | Category name                                                                |
+| component.categories[].icon        | string   | Category icon                                                                |
 | position                           | int      | Sorting number start from zero                                               |
 #}
+
+{% if component.show_cats %}
+{# ============================================================ #}
+{# Premium Glass-Panel Categories Grid (Merchant-Editable)       #}
+{# ============================================================ #}
+<section style="padding:80px 0;" class="glass-bg-container">
+    <div class="glass-orb glass-orb-1"></div>
+    <div class="glass-orb glass-orb-2"></div>
+    <div class="container glass-content">
+        {% if component.title %}
+        <div style="text-align:center; margin-bottom:40px;" class="init-reveal reveal-up" data-reveal>
+            <h2 style="font-size:2rem; font-weight:700; color:var(--color-sabaq-primary, #0F3A28); margin-bottom:8px;">{{ component.title }}</h2>
+            <div style="width:60px; height:4px; background:var(--color-sabaq-accent, #D4AF37); margin:0 auto; border-radius:2px;"></div>
+        </div>
+        {% endif %}
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:24px; padding:0 16px;">
+            {% for cat in component.categories %}
+                <a href="{{ cat.url }}" style="display:block; text-decoration:none; position:relative; overflow:hidden; border-radius:16px;" class="init-reveal reveal-up delay-{{ loop.index }} glass-panel" data-reveal>
+                    <div style="padding:40px 24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+                        <div style="width:80px; height:80px; border-radius:40px; background:linear-gradient(135deg, rgba(47,111,85,0.1), rgba(47,111,85,0.02)); display:flex; align-items:center; justify-content:center; margin-bottom:24px; transition:all 0.3s ease; overflow:hidden;">
+                            {% if cat.image %}
+                                <img src="{{ cat.image }}" width="80" height="80" alt="{{ cat.name }}" style="width:100%; height:100%; object-fit:cover; border-radius:40px;">
+                            {% else %}
+                                <i class="{{ cat.icon|default('sicon-tag') }}" style="font-size:2rem; color:var(--color-sabaq-secondary, #2F6F55);"></i>
+                            {% endif %}
+                        </div>
+                        <h3 style="font-weight:700; font-size:1.15rem; color:var(--color-sabaq-primary, #0F3A28); margin-bottom:8px; font-family: var(--font-ar, 'Alexandria'), sans-serif;">{{ cat.name }}</h3>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% else %}
+{# ============================================================ #}
+{# Standard Quick Links Slider (Original Design)                #}
+{# ============================================================ #}
 <section class="s-block s-block--categories {{ component.merge_with_top_component and position ?'merge-with-top-component' : '' }} {{ not component.title and component.merge_with_top_component ? 'merged-has-no-title' : '' }}">
     <div class="container">
       <salla-slider  
@@ -21,32 +65,18 @@
         show-controls="{{ component.show_controls ? 'true' : 'false'}}" 
         id="main-links-{{ position }}">
           <div slot="items">
-              {% if component.show_cats %}
-                {% for cat in component.categories %}
-                    <div class="swiper-slide slide--one-sixth">
-                        <a href="{{ cat.url }}" class="slide--cat-entry">
-                            {% if cat.image %}
-                              <img src="{{ cat.image ? cat.image : 'images/placeholder.png' | asset }}" class="w-16 h-16 object-cover rounded-full mb-2.5 {{ cat.image ? '' : 'has-placeholder'}}" width="64" height="64" alt="{{ menu.title }}"/>
-                            {% else %}
-                              <i class="{{ cat.icon }}"></i>
-                            {% endif %}
-                            <h2>{{ cat.name }}</h2>
-                        </a>
-                    </div>
-                {% endfor %}
-              {% else %}
-                {% for link in component.links %}
-                  {% if link.title %}
-                    <div class="swiper-slide slide--one-sixth">
-                        <a href="{{ link.url }}" class="slide--cat-entry">
-                            <i class="{{ link.icon }}"></i>
-                            <h2>{{ link.title }}</h2>
-                        </a>
-                    </div>
-                  {% endif %}
-                {% endfor %}
-              {% endif %}
+              {% for link in component.links %}
+                {% if link.title %}
+                  <div class="swiper-slide slide--one-sixth">
+                      <a href="{{ link.url }}" class="slide--cat-entry">
+                          <i class="{{ link.icon }}"></i>
+                          <h2>{{ link.title }}</h2>
+                      </a>
+                  </div>
+                {% endif %}
+              {% endfor %}
           </div>
       </salla-slider>
     </div>
-</section> 
+</section>
+{% endif %}

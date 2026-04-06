@@ -380,7 +380,10 @@
                     "label": "العنوان",
                     "multilanguage": true,
                     "id": "title",
-                    "value": null,
+                    "value": {
+                        "ar": "اكتشف الأقسام",
+                        "en": "Explore Categories"
+                    },
                     "required": false,
                     "format": "text",
                     "description": null,
@@ -419,13 +422,13 @@
                 {
                     "type": "boolean",
                     "icon": "sicon-toggle-off",
-                    "label": "عرض روابط التصنيفات",
-                    "description": "يمكنك تحديد التصنيفات بدل العناصر الخاصة، مع امكانية عرض صورة التصنيف مع العنصر",
+                    "label": "عرض روابط التصنيفات (تصميم بطاقات زجاجية)",
+                    "description": "عند تفعيلها يتم عرض التصنيفات بتصميم بطاقات زجاجية فاخرة مع ربط كل تصنيف بصفحته الخاصة",
                     "id": "show_cats",
                     "format": "switch",
                     "required": false,
-                    "value": false,
-                    "selected": false
+                    "value": true,
+                    "selected": true
                 },
                 {
                     "id": "categories",
