@@ -6926,9 +6926,6 @@ input:where([type='file']):focus {
 .w-12 {
     width: 3rem;
 }
-.w-16 {
-    width: 4rem;
-}
 .w-18 {
     width: 4.5rem;
 }
